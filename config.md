@@ -19,7 +19,7 @@ git clone https://github.com/valenmendez01/evilTrustUADE.git
 
 Dar permisos y ejecutar
 ```bash
-cd evilTrust
+cd evilTrustUADE
 ```
 ```bash
 chmod +x evilTrust.sh
