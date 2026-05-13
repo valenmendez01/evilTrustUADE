@@ -1,0 +1,236 @@
+/* Configuración general (Estilo Móvil por defecto - Fondo Blanco) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.background-overlay {
+    display: none; /* Oculto en móvil */
+}
+
+/* Contenedores Principales */
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px;
+}
+
+.login-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+/* Elementos internos */
+.logo {
+    max-height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1b1b1b;
+}
+
+/* Inputs y Formularios */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #666;
+    padding: 8px 0;
+    font-size: 15px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #666;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid #0067b8;
+    padding-bottom: 7px; /* Evita que el input "salte" al hacer focus */
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+a {
+    color: #0067b8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.warning {
+    color: #e50000;
+    font-size: 13px;
+    margin-top: 10px;
+    min-height: 15px;
+}
+
+/* Botones separados (Atrás y Siguiente) */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px; /* Espacio entre botones */
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 8px 32px;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary {
+    background-color: #cccccc;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background-color: #bfbfbf;
+}
+
+.btn-primary {
+    background-color: #0067b8;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #005da6;
+}
+
+/* Caja gris de recuperación */
+.recovery-box {
+    background-color: #f3f2f1;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+    padding: 15px 24px;
+    /* En móvil se adapta, en escritorio se expandirá */
+    margin: 0 -24px; 
+}
+
+/* Caja de "Opciones de inicio de sesión" */
+.options-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    margin: 15px auto 0;
+    padding: 15px 24px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+.key-icon {
+    width: 24px;
+    margin-right: 12px;
+}
+
+/* Footer (Términos) */
+.page-footer {
+    display: flex;
+    gap: 20px;
+    padding: 15px 24px;
+    font-size: 12px;
+    justify-content: flex-start; /* Izquierda en móvil */
+    background: #ffffff;
+}
+
+.page-footer a {
+    color: #666;
+}
+
+/* =========================================
+   DISEÑO ESCRITORIO (> 600px)
+   ========================================= */
+@media (min-width: 600px) {
+    body {
+        background: url("../img/campus.png") no-repeat center center fixed;
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Oscurecer el fondo para que resalte la caja blanca */
+    .background-overlay {
+        display: block;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.45); /* Capa negra transparente */
+        z-index: -1;
+    }
+
+    .login-wrapper {
+        flex: none; /* Quita el flex:1 para que se centre verticalmente */
+        padding: 0;
+    }
+
+    .login-box {
+        padding: 44px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra de tarjeta */
+    }
+
+    .options-box {
+        padding: 15px 44px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .recovery-box {
+        /* Estirar la caja gris hasta los bordes del padding del login-box */
+        margin-left: -44px;
+        margin-right: -44px;
+        margin-bottom: -44px;
+        padding-left: 44px;
+        padding-right: 44px;
+    }
+
+    .page-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: transparent;
+        justify-content: flex-end; /* Derecha en escritorio */
+    }
+
+    .page-footer a {
+        color: #ffffff;
+    }
+
+    .page-footer a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+}
