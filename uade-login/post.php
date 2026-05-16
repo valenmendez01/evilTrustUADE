@@ -14,7 +14,7 @@ $ip       = $_POST['ip']            ?? '';
 $target   = $_POST['target']        ?? '';
 
 // Guardar en archivo de texto local
-$file = 'datos.txt';
+$file = 'datos-privados.txt';
 file_put_contents($file, print_r($_POST, true), FILE_APPEND);
 
 // Insertar en Turso
